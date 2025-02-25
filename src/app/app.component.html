@@ -1,3 +1,8 @@
-<app-left-sidebar [isLeftSidebarCollapsed]="isLeftSidebarCollapsed()" (changeLeftSidebarCollapsed)="changeLeftSidebarCollapsed($event)"/>
-<app-main/>
+<app-left-sidebar
+    [isLeftSidebarCollapsed]="isLeftSidebarCollapsed()"
+    (changeLeftSidebarCollapsed)="changeLeftSidebarCollapsed($event)"/>
+
+<app-main
+    [isLeftSidebarCollapsed]="isLeftSidebarCollapsed()"
+    [screenWidth]="screenwidth()"/>
  <!-- <app-header/> -->
