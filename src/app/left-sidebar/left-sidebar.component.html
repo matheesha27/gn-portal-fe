@@ -18,11 +18,10 @@
           [routerLink]="item.routeLink"
           routerLinkActive="active"
           [routerLinkActiveOptions]="{ exact: true }"
+          (click)="onNavItemClick(item)"
         >
           <i class="sidenav-link-icon" [class]="item.icon"></i>
-          @if (!isLeftSidebarCollapsed()) {
-            <span class="sidenav-link-text">{{ item.label }}</span>
-          }
+          <span *ngIf="!isLeftSidebarCollapsed()" class="sidenav-link-text">{{ item.label }}</span>
         </a>
       </li>
     }

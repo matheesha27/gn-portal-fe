@@ -14,22 +14,22 @@ export class LeftSidebarComponent {
   changeLeftSidebarCollapsed = output<boolean>();
   items = [
     {
-      routeLink: 'dashboard',
+      routeLink: '/',
       icon: 'fal fa-home',
-      label: 'Dashboard'
+      label: 'Home'
     },
     {
-      routeLink: 'ds-map',
+      routeLink: '/map',
       icon: 'fal fa-map',
       label: 'Map'
     },
     {
-      routeLink: 'portal',
+      routeLink: '/portal',
       icon: 'fal fa-file',
       label: 'Portal'
     },
     {
-      routeLink: 'contact',
+      routeLink: '/contact',
       icon: 'fal fa-phone',
       label: 'Contact'
     }
@@ -41,5 +41,9 @@ export class LeftSidebarComponent {
 
   closeSideNav(): void {
     this.changeLeftSidebarCollapsed.emit(true);
+  }
+
+  onNavItemClick(item: any) {
+    console.log("Navigation Item Clicked: ", item);
   }
 }

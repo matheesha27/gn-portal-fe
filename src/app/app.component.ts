@@ -1,17 +1,16 @@
-import { Component, HostListener, signal } from '@angular/core';
+import { Component, HostListener, OnInit, signal } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { LeftSidebarComponent } from './left-sidebar/left-sidebar.component';
-import { MainComponent } from "./main/main.component";
-import { HeaderComponent } from './header/header.component';
+import { MapComponent } from './map/map.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [LeftSidebarComponent, MainComponent],
+  imports: [LeftSidebarComponent, RouterOutlet],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
   title = 'grama-niladhari-portal-fe';
   isLeftSidebarCollapsed = signal<boolean>(false);
   screenwidth = signal<number>(window.innerWidth);
@@ -26,5 +25,9 @@ export class AppComponent {
     if (this.screenwidth() < 768) {
       this.isLeftSidebarCollapsed.set(true);
     }
+  }
+
+  ngOnInit(): void {
+    this.isLeftSidebarCollapsed.set(this.screenwidth() < 768);
   }
 }
