@@ -6,7 +6,7 @@ import { MapComponent } from './map/map.component';
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [LeftSidebarComponent, RouterOutlet],
+  imports: [LeftSidebarComponent, RouterOutlet, MapComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })

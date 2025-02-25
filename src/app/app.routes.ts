@@ -8,11 +8,8 @@ export const routes: Routes = [
         component: MapComponent
     },
     {
-        path: 'portal',
-        component: MapComponent
-    },
-    {
-        path: 'contact',
-        component: MapComponent
+        path: '',
+        redirectTo: '', // Default route
+        pathMatch: 'full'
     }
 ];
